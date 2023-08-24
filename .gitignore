@@ -1,0 +1,9 @@
+# Ignore compiled output 
+build/
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+
+# Ignore clangd cache
+.cache/

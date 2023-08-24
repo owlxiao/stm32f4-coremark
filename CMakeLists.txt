@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5.0)
 
 # project settings
-project(FIXME C CXX ASM)
+project(stm32f4-cmake C CXX ASM)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 11)
 set(STM32_CPU_TYPE cortex-m4)
@@ -49,10 +49,18 @@ endif()
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 include(stm32)
 
+# Add project subroutines
+include_directories(./) # TODO: Auto cmake include_directories
+set(TOTAL_EXTRA_SOURCES "")
+
+add_subdirectory(apps)
+
+
 # Create stm32 lib
 stm32_create_target(CUBEMX_DIR ${CUBEMX_PROJECT_DIR}
-    TARGET_NAME ${PROJECT_NAME}.elf
-    CPU_TYPE ${STM32_CPU_TYPE})
+        TARGET_NAME ${PROJECT_NAME}.elf
+        CPU_TYPE ${STM32_CPU_TYPE}
+        EXTRA_SOURCES ${TOTAL_EXTRA_SOURCES})
 
 # Additional post processings
 stm32_fixup_project(${PROJECT_NAME} ${CUBEMX_PROJECT_DIR} ${STM32_CPU_TYPE})

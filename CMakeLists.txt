@@ -54,7 +54,7 @@ include_directories(./) # TODO: Auto cmake include_directories
 set(TOTAL_EXTRA_SOURCES "")
 
 add_subdirectory(apps)
-
+add_subdirectory(support)
 
 # Create stm32 lib
 stm32_create_target(CUBEMX_DIR ${CUBEMX_PROJECT_DIR}

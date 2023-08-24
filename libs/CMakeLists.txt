@@ -1,0 +1,5 @@
+add_subdirectory(CoreMark)
+
+# TODO: FIXME: Automatically add source files
+# Append CoreMark's RELATIVE_EXTRA_SOURCES to TOTAL_EXTRA_SOURCES
+set(TOTAL_EXTRA_SOURCES ${TOTAL_EXTRA_SOURCES} ${RELATIVE_EXTRA_SOURCES} PARENT_SCOPE)

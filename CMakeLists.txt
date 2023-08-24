@@ -51,10 +51,11 @@ include(stm32)
 
 # Add project subroutines
 include_directories(./) # TODO: Auto cmake include_directories
-set(TOTAL_EXTRA_SOURCES "")
+set(TOTAL_EXTRA_SOURCES "" CACHE INTERNAL "Total extra sources")
 
-add_subdirectory(apps)
 add_subdirectory(support)
+add_subdirectory(libs)
+add_subdirectory(apps)
 
 # Create stm32 lib
 stm32_create_target(CUBEMX_DIR ${CUBEMX_PROJECT_DIR}

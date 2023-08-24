@@ -1,5 +1,9 @@
 #include "apps/main.h"
 
+extern "C" {
+#include "libs/CoreMark/coremark.h"
+}
+
 #include "main.h"
 #include "usb_device.h"
 
@@ -13,7 +17,11 @@ void bsp_led_show(void) {
 
 extern "C" void driver_main(void) {
   MX_USB_DEVICE_Init();
-  bsp_led_show();
+
+  std::cout << "Begin coremark" << std::endl;
+
+  coremark_main();
+
   for (;;)
-    std::cout << "Hello World!" << std::endl;
+    bsp_led_show();
 }

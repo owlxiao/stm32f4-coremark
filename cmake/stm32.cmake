@@ -1,7 +1,7 @@
 MACRO(stm32_create_target)
     # Parse arguments
     set(oneValueArgs CPU_TYPE CUBEMX_DIR TARGET_NAME)
-    set(multiValueArgs EXTRA_SOURCES)
+    set(multiValueArgs EXTRA_SOURCES EXTRA_LIBRARY)
     cmake_parse_arguments(CREATETARGET "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
     if(NOT DEFINED CREATETARGET_TARGET_NAME)
@@ -93,6 +93,7 @@ MACRO(stm32_create_target)
     add_executable(${CREATETARGET_TARGET_NAME} ${SRC_LIST} ${CREATETARGET_EXTRA_SOURCES})
     target_include_directories(${CREATETARGET_TARGET_NAME} PUBLIC ${INCL_LIST})
     target_compile_definitions(${CREATETARGET_TARGET_NAME} PUBLIC $<$<COMPILE_LANGUAGE:C,CXX>:${MX_CDEFS}>)
+
     message(STATUS "C_DEFS ${MX_CDEFS}")
     message(STATUS "INCL_LIST ${INCL_LIST}")
     message(STATUS "SRC_LIST ${SRC_LIST}")

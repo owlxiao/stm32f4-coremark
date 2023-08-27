@@ -18,7 +18,7 @@ Original Author: Shay Gal-on
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "libs/CoreMark/coremark.h"
+#include "CoreMark/coremark.h"
 
 #include "stm32f4xx.h"
 

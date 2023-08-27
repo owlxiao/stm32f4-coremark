@@ -16,7 +16,7 @@ limitations under the License.
 Original Author: Shay Gal-on
 */
 
-#include "coremark.h"
+#include "CoreMark/coremark.h"
 /*
 Topic: Description
         Benchmark using a linked list.

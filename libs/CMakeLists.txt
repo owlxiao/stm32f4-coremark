@@ -1,4 +1,6 @@
 add_subdirectory(CoreMark)
+add_subdirectory(Apps)
+add_subdirectory(Support)
 
 # TODO: FIXME: Automatically add source files
 # Append CoreMark's RELATIVE_EXTRA_SOURCES to TOTAL_EXTRA_SOURCES

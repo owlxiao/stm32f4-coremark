@@ -50,18 +50,17 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 include(stm32)
 
 # Add project subroutines
-include_directories(./) # TODO: Auto cmake include_directories
+include_directories(include)
 set(TOTAL_EXTRA_SOURCES "" CACHE INTERNAL "Total extra sources")
 
-add_subdirectory(support)
 add_subdirectory(libs)
-add_subdirectory(apps)
 
 # Create stm32 lib
 stm32_create_target(CUBEMX_DIR ${CUBEMX_PROJECT_DIR}
         TARGET_NAME ${PROJECT_NAME}.elf
         CPU_TYPE ${STM32_CPU_TYPE}
         EXTRA_SOURCES ${TOTAL_EXTRA_SOURCES})
+
 
 # Additional post processings
 stm32_fixup_project(${PROJECT_NAME} ${CUBEMX_PROJECT_DIR} ${STM32_CPU_TYPE})

@@ -6,3 +6,5 @@ foreach(source ${EXTRA_SOURCES})
 endforeach()
 
 set(TOTAL_EXTRA_SOURCES ${TOTAL_EXTRA_SOURCES} ${RELATIVE_EXTRA_SOURCES} PARENT_SCOPE)
+
+add_library(support write.cpp)

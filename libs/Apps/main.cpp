@@ -1,11 +1,11 @@
-#include "apps/main.h"
+#include "Apps/main.h"
 
 extern "C" {
-#include "libs/CoreMark/coremark.h"
-}
+#include "CoreMark/coremark.h"
 
 #include "main.h"
 #include "usb_device.h"
+}
 
 #include <iostream>
 

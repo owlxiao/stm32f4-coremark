@@ -14,3 +14,11 @@ endforeach()
 
 set(TOTAL_EXTRA_SOURCES ${TOTAL_EXTRA_SOURCES} ${RELATIVE_EXTRA_SOURCES} PARENT_SCOPE)
 
+add_library(coremark
+        Simple/core_portme.c
+        core_util.c
+        core_list_join.c
+        core_matrix.c
+        core_state.c
+        core_main.c
+        )

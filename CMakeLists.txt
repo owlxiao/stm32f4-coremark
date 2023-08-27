@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5.0)
 
 # project settings
-project(stm32f4-cmake C CXX ASM)
+project(stm32f4-coremark C CXX ASM)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 11)
 set(STM32_CPU_TYPE cortex-m4)

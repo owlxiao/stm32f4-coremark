@@ -77,7 +77,7 @@ typedef clock_t CORE_TICKS;
 #endif
 #ifndef COMPILER_FLAGS
 #define COMPILER_FLAGS \
-    "-g"
+    "-g -Ofast"
 #endif
 #ifndef MEM_LOCATION
 #define MEM_LOCATION "STACK"

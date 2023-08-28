@@ -51,9 +51,7 @@ include(stm32)
 
 # Add project subroutines
 include_directories(include)
-set(TOTAL_EXTRA_SOURCES "" CACHE INTERNAL "Total extra sources")
-
-add_subdirectory(libs)
+file(GLOB_RECURSE TOTAL_EXTRA_SOURCES "libs/*.c" "libs/*.cpp")
 
 # Create stm32 lib
 stm32_create_target(CUBEMX_DIR ${CUBEMX_PROJECT_DIR}
@@ -61,6 +59,7 @@ stm32_create_target(CUBEMX_DIR ${CUBEMX_PROJECT_DIR}
         CPU_TYPE ${STM32_CPU_TYPE}
         EXTRA_SOURCES ${TOTAL_EXTRA_SOURCES})
 
+message(STATUS "Extra sources: ${TOTAL_EXTRA_SOURCES}")
 
 # Additional post processings
 stm32_fixup_project(${PROJECT_NAME} ${CUBEMX_PROJECT_DIR} ${STM32_CPU_TYPE})
